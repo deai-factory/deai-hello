@@ -1,1 +1,77 @@
+{
+
+  "machine": {
+
+    "gpu": 0,
+
+    "cpu": 1000,
+
+    "ram": 100
+
+  },
+
+  "job": {
+
+    "APIVersion": "V1beta1",
+
+    "Spec": {
+
+      "Deal": {
+
+        "Concurrency": 1
+
+      },
+
+      "Docker": {
+
+        "Entrypoint": [
+
+          "/bin/sh",
+
+          "-c",
+
+          "/usr/games/cowsay \"$MESSAGE\""
+
+        ],
+
+        "EnvironmentVariables": [
+
+          {{ if .Message }}"{{ subst "MESSAGE=%s" .Message }}"{{else}}"Message=Hello Dell World"{{ end }}
+
+        ],
+
+        "Image": "deaifactory/deai-hello:0.1@sha256:598aadbc673c7c2ec54c5fe2ceb7376790671bf6678fb54b9dd7d7271fc6391b"
+
+      },
+
+      "Engine": "Docker",
+
+      "Network": {
+
+        "Type": "None"
+
+      },
+
+      "PublisherSpec": {
+
+        "Type": "IPFS"
+
+      },
+
+      "Resources": {
+
+        "GPU": ""
+
+      },
+
+      "Timeout": 1800,
+
+      "Verifier": "Noop"
+
+    }
+
+  }
+
+}
+
 
