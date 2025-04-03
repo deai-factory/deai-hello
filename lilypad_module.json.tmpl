@@ -59,8 +59,8 @@
       },
 
       "Outputs": [{ "Name": "outputs", "Path": "/outputs" }],
-      "Resources": { "GPU": "1", "CPU": "8", "Memory": "16Gb" }
-
+      "Resources": { "GPU": "1", "CPU": "8", "Memory": "16Gb" },
+      "inputs": [ { "StorageSource": "IPFS", "Name": "inputs", "CID": {{.InputsCID}}, "path": "/inputs" }
       },
 
       "Timeout": 1800,
